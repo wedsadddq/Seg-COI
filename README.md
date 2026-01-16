@@ -115,12 +115,7 @@ python demo_gradio.py
 ## ✍️ Citation
 
 ```
-@article{zhang2024corrclip,
-  title={Corrclip: Reconstructing patch correlations in clip for open-vocabulary semantic segmentation},
-  author={Zhang, Dengke and Liu, Fagui and Tang, Quan},
-  journal={arXiv preprint arXiv:2411.10086},
-  year={2024}
-}
+
 ```
 
 ## 🙏 Acknowledgement
