@@ -1,6 +1,6 @@
 <div align="center">
 
-# CorrCLIP: Reconstructing Patch Correlations in CLIP for Open-Vocabulary Semantic Segmentation
+# Breaking the Boundaries of OVS: A Training-Free Semantic Query Framework for Segmenting Anything with Hypernym
 
 </div>
 ## 📄 Overview
