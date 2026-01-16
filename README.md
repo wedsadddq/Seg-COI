@@ -10,3 +10,41 @@
 </div>
 
 > *We propose SegCoI, a novel query-guided, training-free segmentation framework that reinterprets Open-Vocabulary Segmentation (OVS) by focusing on categories of interest. SegCoI introduces a Hierarchical Global-Local Query (HGQ) mechanism, Dominant Category Mask Refinement (DCMR), and a lightweight context-aware attention strategy to refine segmentation boundaries and enhance local visual perception. Extensive experiments show that SegCoI achieves 1.5× performance improvement over existing methods, setting a new state-of-the-art benchmark in interactive visual query segmentation*
+
+## 📦 Dependencies
+
+   ```
+   # git clone this repository
+   git clone https://github.com/zdk258/CorrCLIP.git
+   cd CorrCLIP
+   
+   # create new anaconda env
+   conda create -n CorrCLIP python=3.10
+   conda activate CorrCLIP
+   
+   # install dependencies
+   pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
+   pip install -U openmim
+   mim install mmengine==0.10.7
+   mim install mmcv==2.1.0
+   pip install mmsegmentation==1.2.2
+   pip install -r requirements.txt
+   ```
+
+## ⚙️ Mask Generator Configuration
+
+Modify **mask_generator** in [base_config.py](configs/base_config.py) to use different mask generators. To accelerate, you can use the smaller model and adjust the corresponding parameters
+in [set_mask_generator](corrclip_segmentor.py).
+
+### SAM2
+
+To replicate the results from our paper, we recommend using the pre-generated SAM2 masks, where relevant parameters can be seen in the paper.
+
+1) Set **mask_generator** to `None`.
+2) Download [**_region masks_**](https://huggingface.co/datasets/dk258/CorrCLIP/resolve/main/region_masks.zip?download=true).
+3) Extract to the `data/` directory.
+
+If you prefer to generate masks dynamically,
+
+1) Set **mask_generator** to `sam2`.
+2) Download [_**sam2_hiera_large**_](https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt) weights.
