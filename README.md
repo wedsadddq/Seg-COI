@@ -109,7 +109,7 @@ python demo_gradio.py
 ```
 
 <div align="center">
-<img src="images/demo.png" alt="CorrCLIP Gradio Demo" width="100%"/>
+<img src="images/gradio.jpg" alt="CorrCLIP Gradio Demo" width="100%"/>
 </div>
 
 ## ✍️ Citation
