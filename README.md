@@ -15,12 +15,12 @@
 
    ```
    # git clone this repository
-   git clone https://github.com/zdk258/CorrCLIP.git
-   cd CorrCLIP
+   git clone https://github.com/wedsadddq/SegCOI.git
+   cd SegCOI
    
    # create new anaconda env
-   conda create -n CorrCLIP python=3.10
-   conda activate CorrCLIP
+   conda create -n SegCOI python=3.10
+   conda activate SegCOI
    
    # install dependencies
    pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
@@ -81,23 +81,23 @@ python eval_all.py
 
 ### 3. Results
 
-The performance of CorrCLIP can be enhanced as the Mask Generator improves. The following presents the results using different Mask Generators across eight benchmark datasets:
 
-|  Mask Generator   |  VOC21   |  VOC20   |   PC59   |   PC60   |   City   |   ADE    |  Stuff   |  Object  |   Avg    |
-|:-----------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-|     **ViT-B**     |
-| SAM2<sub>32</sub> |   74.8   |   88.8   |   48.8   |   44.2   |   49.4   |   26.9   |   31.6   |   43.7   |   51.0   |
-| SAM2<sub>8</sub>  |   73.9   |   87.6   |   48.0   |   43.7   |   47.9   |   26.5   |   31.8   |   43.6   |   50.4   |
-|    Mask2Former    |   73.9   |   87.8   |   48.2   |   43.7   |   44.3   |   24.6   |   33.9   |   46.2   |   50.3   |
-|       EoMT        |   76.0   | **90.6** |   50.4   |   45.4   |   48.0   |   26.7   | **34.5** | **46.6** |   52.3   |
-|     EntitySeg     | **76.2** |   89.6   | **50.7** | **45.7** | **51.6** | **28.6** |   32.4   |   44.5   | **52.4** |
-|     **ViT-L**     |          |          |          |          |          |          |          |          |          |
-| SAM2<sub>32</sub> |   76.7   |   91.5   |   50.8   |   44.9   |   51.1   |   30.7   |   34.0   |   49.4   |   53.6   |
-| SAM2<sub>8</sub>  |   76.2   |   91.2   |   49.9   |   44.2   |   48.9   |   29.8   |   33.7   |   49.0   |   52.9   |
-|    Mask2Former    |   76.3   |   90.8   |   50.2   |   44.6   |   45.4   |   26.9   |   35.6   |   52.2   |   52.7   |
-|       EoMT        |   78.0   | **92.2** |   52.8   |   46.4   |   50.2   |   30.1   | **36.3** | **52.9** |   54.9   |
-|     EntitySeg     | **78.9** |   92.0   | **53.0** | **46.8** | **53.7** | **32.6** |   34.9   |   51.0   | **55.4** |
+<p align="center">
+  <img src="images/OVS.jpg" width="800" />
+</p>
 
+<p align="center">
+  <img src="images/QOVS.jpg" width="800" />
+</p>
+
+<p align="center">
+  <img src="images/OVS1.jpg" width="800" />
+</p>
+
+
+<p align="center">
+  <img src="images/QOVS1.jpg" width="800" />
+</p>
 ## 🤖 Gradio Inference
 
 We provide a Gradio demo to perform segmentation on images with custom category names. You can run it on your own machine. 
