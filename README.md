@@ -48,3 +48,33 @@ If you prefer to generate masks dynamically,
 
 1) Set **mask_generator** to `sam2`.
 2) Download [_**sam2_hiera_large**_](https://dl.fbaipublicfiles.com/segment_anything_2/072824/sam2_hiera_large.pt) weights.
+
+
+## 🚀 Evaluation
+
+### 1. Datasets
+
+`With background class`: PASCAL VOC (VOC21), PASCAL Context (PC60), and COCO Object (Object),
+
+`Without background class`: VOC20, PC59 (i.e., VOC21 and PC60 without the background category), Cityscapes (City), ADE20k (ADE), and COCO Stuff164k (Stuff).
+
+Please follow the data preparation document of [MMSeg](https://github.com/open-mmlab/mmsegmentation/blob/main/docs/en/user_guides/2_dataset_prepare.md) to download and pre-process
+the datasets. Move the datasets to the `data/` directory.
+The COCO Object dataset can be converted from COCO Stuff164k by executing the following command:
+
+```
+python datasets/cvt_coco_object.py PATH_TO_COCO_STUFF164K -o PATH_TO_COCO164K
+```
+
+### 2. Running
+
+```
+# single-GPU:
+python eval.py --config config/cfg_DATASET.py 
+
+# multi-GPU:
+bash dist_test.sh config/cfg_DATASET.py NUM_GPU
+
+# evaluation on all datasets:
+python eval_all.py
+```
